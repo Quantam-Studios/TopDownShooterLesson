@@ -1,11 +1,11 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawning : MonoBehaviour
 {
     public GameObject[] Enemies;
-    public Transform[] spawnPositions; 
+    public Transform[] spawnPositions;
     public float setTimeBtwSpawns;
     private float timeBtwSpawns;
 
