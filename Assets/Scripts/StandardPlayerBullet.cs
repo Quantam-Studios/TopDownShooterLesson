@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBullet : MonoBehaviour
+public class StandardPlayerBullet : MonoBehaviour
 {
-    private Vector2 target;
+    public Vector2 target;
     public float speed;
 
     private void Awake()
