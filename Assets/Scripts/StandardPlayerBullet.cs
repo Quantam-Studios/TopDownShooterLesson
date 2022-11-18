@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class StandardPlayerBullet : MonoBehaviour
 {
+    private Bullet stats;
+
+    [HideInInspector]
     public Vector2 target;
-    public float speed;
 
     private void Awake()
     {
+        stats = GetComponent<BaseBullet>().stats;
         target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, target, stats.speed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, target) <= 0.2f)
         {

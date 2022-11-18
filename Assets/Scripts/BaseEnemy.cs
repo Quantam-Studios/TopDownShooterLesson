@@ -19,7 +19,7 @@ public class BaseEnemy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "PlayerBullet")
+        if (col.gameObject.tag == "Bullet")
         {
             Destroy(col.gameObject);
             Destroy(gameObject);

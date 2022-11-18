@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerScatterBullet : MonoBehaviour
 {
-    public float speed;
+    private Bullet stats;
+
     private Vector2 target;
 
     public int maxShrapnel;
@@ -13,16 +14,17 @@ public class PlayerScatterBullet : MonoBehaviour
     public float maxDeviation;
     public float minDeviation;
 
-    public GameObject standardBullet; 
+    public GameObject standardBullet;
 
-    private void Start()
+    private void Awake()
     {
+        stats = GetComponent<BaseBullet>().stats;
         target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, target, stats.speed * Time.deltaTime);
 
         if (Vector2.Distance(transform.position, target) <= 0.2f)
         {
