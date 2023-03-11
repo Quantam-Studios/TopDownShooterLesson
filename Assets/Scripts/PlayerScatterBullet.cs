@@ -26,7 +26,7 @@ public class PlayerScatterBullet : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position, target, stats.speed * Time.deltaTime);
 
-        if (Vector2.Distance(transform.position, target) <= 0.2f)
+        if (Vector2.Distance(transform.position, target) <= 0.1f)
         {
             Destroy(gameObject);
         }

@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public int health;
-    public int damage;
 
     private void Update()
     {
@@ -24,7 +23,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if (col.gameObject.tag == "Enemy")
         {
-            health -= damage;
+            BaseEnemy enemyStats = col.gameObject.GetComponent<BaseEnemy>();
+            health -= Random.Range(enemyStats.stats.damageMin, enemyStats.stats.damageMax);
             Destroy(col.gameObject);
         }
     }
